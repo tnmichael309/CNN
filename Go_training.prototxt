@@ -1,12 +1,11 @@
 name: "Go_Learning"
-
 layers {
   name: "channel_1"
   type: IMAGE_DATA
   top: "channel_1"
   top: "label_1"
   image_data_param {
- 	source: "./Go_Learning/file_list_channel_1.txt"
+ 	source: "../../Go_Learning/file_list_channel_1.txt"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -19,7 +18,7 @@ layers {
   top: "channel_2"
   top: "label_2"
   image_data_param {
- 	source: "./Go_Learning/file_list_channel_2.txt"
+ 	source: "../../Go_Learning/file_list_channel_2.txt"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -32,7 +31,7 @@ layers {
   top: "channel_3"
   top: "label_3"
   image_data_param {
- 	source: "./Go_Learning/file_list_channel_3.txt"
+ 	source: "../../Go_Learning/file_list_channel_3.txt"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -45,7 +44,7 @@ layers {
   top: "channel_4"
   top: "label_4"
   image_data_param {
- 	source: "./Go_Learning/file_list_channel_4.txt"
+ 	source: "../../Go_Learning/file_list_channel_4.txt"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -58,7 +57,7 @@ layers {
   top: "channel_5"
   top: "label_5"
   image_data_param {
- 	source: "./Go_Learning/file_list_channel_5.txt"
+ 	source: "../../Go_Learning/file_list_channel_5.txt"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -71,7 +70,7 @@ layers {
   top: "channel_6"
   top: "label_6"
   image_data_param {
- 	source: "./Go_Learning/file_list_channel_6.txt"
+ 	source: "../../Go_Learning/file_list_channel_6.txt"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -84,7 +83,7 @@ layers {
   top: "channel_7"
   top: "label_7"
   image_data_param {
- 	source: "./Go_Learning/file_list_channel_7.txt"
+ 	source: "../../Go_Learning/file_list_channel_7.txt"
     batch_size: 64
     new_height: 19
     new_width: 19
