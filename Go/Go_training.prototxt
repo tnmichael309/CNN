@@ -4,89 +4,82 @@ layers {
   type: DATA
   top: "channel_1"
   top: "label_1"
-  image_data_param {
+  data_param {
  	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_1"
     batch_size: 64
-    new_height: 19
-    new_width: 19
+	backend: LMDB
   }
 }
 
 layers {
   name: "channel_2"
-  type: IMAGE_DATA
+  type: DATA
   top: "channel_2"
-  top: "label_2"
-  image_data_param {
+  #top: "label_2"
+  data_param {
  	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_2"
     batch_size: 64
-    new_height: 19
-    new_width: 19
+	backend: LMDB
   }
 }
 
 layers {
   name: "channel_3"
-  type: IMAGE_DATA
+  type: DATA
   top: "channel_3"
-  top: "label_3"
-  image_data_param {
+  #top: "label_3"
+  data_param {
  	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_3"
     batch_size: 64
-    new_height: 19
-    new_width: 19
+	backend: LMDB
   }
 }
 
 layers {
   name: "channel_4"
-  type: IMAGE_DATA
+  type: DATA
   top: "channel_4"
-  top: "label_4"
-  image_data_param {
+  #top: "label_4"
+  data_param {
  	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_4"
     batch_size: 64
-    new_height: 19
-    new_width: 19
+	backend: LMDB
   }
 }
 
 layers {
   name: "channel_5"
-  type: IMAGE_DATA
+  type: DATA
   top: "channel_5"
-  top: "label_5"
-  image_data_param {
+  #top: "label_5"
+  data_param {
  	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_5"
     batch_size: 64
-    new_height: 19
-    new_width: 19
+	backend: LMDB
   }
 }
 
 layers {
   name: "channel_6"
-  type: IMAGE_DATA
+  type: DATA
   top: "channel_6"
-  top: "label_6"
-  image_data_param {
+  #top: "label_6"
+  data_param {
  	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_6"
     batch_size: 64
-    new_height: 19
-    new_width: 19
+	backend: LMDB
   }
 }
 
 layers {
   name: "channel_7"
-  type: IMAGE_DATA
+  type: DATA
   top: "channel_7"
-  top: "label_7"
-  image_data_param {
+  #top: "label_7"
+  data_param {
  	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_7"
     batch_size: 64
-    new_height: 19
-    new_width: 19
+	backend: LMDB
   }
 }
 
@@ -117,7 +110,7 @@ layers {
     num_output: 128
     kernel_size: 5
     stride: 1
-	pad: 4
+	pad: 2
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -140,7 +133,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -163,7 +156,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -186,7 +179,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -209,7 +202,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -232,7 +225,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -255,7 +248,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -278,7 +271,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -301,7 +294,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -324,7 +317,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001
@@ -347,7 +340,7 @@ layers {
     num_output: 128
     kernel_size: 3
     stride: 1
-	pad: 2
+	pad: 1
     weight_filler {
       type: "gaussian"
       std: 0.0001

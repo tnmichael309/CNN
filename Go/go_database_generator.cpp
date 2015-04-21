@@ -38,7 +38,7 @@ int main(int argc, char** argv){
 	data_base_name = data_base_name + string(argv[1]);
 	
 	// Create new DB
-	scoped_ptr<db::DB> db(db::GetDB("leveldb"));
+	scoped_ptr<db::DB> db(db::GetDB("lmdb"));
 	db->Open(data_base_name.c_str(), db::NEW);
 	scoped_ptr<db::Transaction> txn(db->NewTransaction());
 	
@@ -66,7 +66,7 @@ int main(int argc, char** argv){
 		}
 		
 		Mat cv_img = Mat(19,20, CV_8UC1,real_position);
-		cout << cv_img << endl;
+		//cout << cv_img << endl;
 		CVMatToDatum(cv_img, &datum);
 		datum.set_label(atoi(label));
 		
