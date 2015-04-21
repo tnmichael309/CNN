@@ -1,11 +1,11 @@
 name: "Go_Learning"
 layers {
   name: "channel_1"
-  type: IMAGE_DATA
+  type: DATA
   top: "channel_1"
   top: "label_1"
   image_data_param {
- 	source: "../../Go_Learning/file_list_channel_1.txt"
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_1"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -18,7 +18,7 @@ layers {
   top: "channel_2"
   top: "label_2"
   image_data_param {
- 	source: "../../Go_Learning/file_list_channel_2.txt"
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_2"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -31,7 +31,7 @@ layers {
   top: "channel_3"
   top: "label_3"
   image_data_param {
- 	source: "../../Go_Learning/file_list_channel_3.txt"
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_3"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -44,7 +44,7 @@ layers {
   top: "channel_4"
   top: "label_4"
   image_data_param {
- 	source: "../../Go_Learning/file_list_channel_4.txt"
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_4"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -57,7 +57,7 @@ layers {
   top: "channel_5"
   top: "label_5"
   image_data_param {
- 	source: "../../Go_Learning/file_list_channel_5.txt"
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_5"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -70,7 +70,7 @@ layers {
   top: "channel_6"
   top: "label_6"
   image_data_param {
- 	source: "../../Go_Learning/file_list_channel_6.txt"
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_6"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -83,7 +83,7 @@ layers {
   top: "channel_7"
   top: "label_7"
   image_data_param {
- 	source: "../../Go_Learning/file_list_channel_7.txt"
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Go_data_base_7"
     batch_size: 64
     new_height: 19
     new_width: 19
@@ -367,7 +367,7 @@ layers {
   blobs_lr: 1
   blobs_lr: 2
   inner_product_param {
-    num_output: 361
+    num_output: 381
     weight_filler {
       type: "gaussian"
       std: 0.1
