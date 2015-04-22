@@ -34,7 +34,7 @@ using namespace cv;
 
 int main(int argc, char** argv){
 	
-	string data_base_name = "./Go_New_DB/Go_data_base_";
+	string data_base_name = "./Go_New_DB/Small_DB/Go_data_base_";
 	data_base_name = data_base_name + string(argv[1]);
 	
 	// Create new DB
@@ -45,7 +45,7 @@ int main(int argc, char** argv){
 	unsigned long long int key = 1;
 	Datum datum;
 	fstream infile;
-	infile.open(("./Go_Original_DB/original_go_db_"+string(argv[1])).c_str(), ios::in);
+	infile.open(("./Go_Original_DB/Small_DB/original_go_db_"+string(argv[1])).c_str(), ios::in);
 
 	while(true){
 		char position[500], label[10];

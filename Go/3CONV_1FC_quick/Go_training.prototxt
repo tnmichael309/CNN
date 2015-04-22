@@ -1,0 +1,232 @@
+name: "Go_Learning"
+layers {
+  name: "channel_1"
+  type: DATA
+  top: "channel_1"
+  top: "label_1"
+  data_param {
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Small_DB/Go_data_base_1"
+    batch_size: 128
+	backend: LMDB
+	scale: 0.00390625
+  }
+}
+
+layers {
+  name: "channel_2"
+  type: DATA
+  top: "channel_2"
+  #top: "label_2"
+  data_param {
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Small_DB/Go_data_base_2"
+    batch_size: 128
+	backend: LMDB
+	scale: 0.00390625
+  }
+}
+
+layers {
+  name: "channel_3"
+  type: DATA
+  top: "channel_3"
+  #top: "label_3"
+  data_param {
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Small_DB/Go_data_base_3"
+    batch_size: 128
+	backend: LMDB
+	scale: 0.00390625
+  }
+}
+
+layers {
+  name: "channel_4"
+  type: DATA
+  top: "channel_4"
+  #top: "label_4"
+  data_param {
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Small_DB/Go_data_base_4"
+    batch_size: 128
+	backend: LMDB
+	scale: 0.00390625
+  }
+}
+
+layers {
+  name: "channel_5"
+  type: DATA
+  top: "channel_5"
+  #top: "label_5"
+  data_param {
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Small_DB/Go_data_base_5"
+    batch_size: 128
+	backend: LMDB
+	scale: 0.00390625
+  }
+}
+
+layers {
+  name: "channel_6"
+  type: DATA
+  top: "channel_6"
+  #top: "label_6"
+  data_param {
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Small_DB/Go_data_base_6"
+    batch_size: 128
+	backend: LMDB
+	scale: 0.00390625
+  }
+}
+
+layers {
+  name: "channel_7"
+  type: DATA
+  top: "channel_7"
+  #top: "label_7"
+  data_param {
+ 	source: "/home/j31icw00/workdir/leooo/caffe/Go_New_DB/Small_DB/Go_data_base_7"
+    batch_size: 128
+	backend: LMDB
+	scale: 0.00390625
+  }
+}
+
+layers {
+  name: "concat_all_channels"
+  bottom: "channel_1"
+  bottom: "channel_2"
+  bottom: "channel_3"
+  bottom: "channel_4"
+  bottom: "channel_5"
+  bottom: "channel_6"
+  bottom: "channel_7"
+  top: "concat_all_channels"
+  type: CONCAT
+  concat_param {
+    concat_dim: 1
+  }
+}
+
+layers {
+  name: "conv1"
+  type: CONVOLUTION
+  bottom: "concat_all_channels"
+  top: "conv1"
+  blobs_lr: 1
+  blobs_lr: 2
+  convolution_param {
+    num_output: 16
+    kernel_size: 5
+    stride: 1
+	pad: 2
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layers {
+  name: "relu1"
+  type: RELU
+  bottom: "conv1"
+  top: "conv1"
+}
+
+layers {
+  name: "conv2"
+  type: CONVOLUTION
+  bottom: "conv1"
+  top: "conv2"
+  blobs_lr: 1
+  blobs_lr: 2
+  convolution_param {
+    num_output: 16
+    kernel_size: 3
+    stride: 1
+	pad: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layers {
+  name: "relu2"
+  type: RELU
+  bottom: "conv2"
+  top: "conv2"
+}
+
+layers {
+  name: "conv3"
+  type: CONVOLUTION
+  bottom: "conv2"
+  top: "conv3"
+  blobs_lr: 1
+  blobs_lr: 2
+  convolution_param {
+    num_output: 16
+    kernel_size: 3
+    stride: 1
+	pad: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layers {
+  name: "relu3"
+  type: RELU
+  bottom: "conv3"
+  top: "conv3"
+}
+
+layers {
+  name: "ip1"
+  type: INNER_PRODUCT
+  bottom: "conv3"
+  top: "ip1"
+  blobs_lr: 1
+  blobs_lr: 2
+  inner_product_param {
+    num_output: 381
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layers {
+  name: "relu4"
+  type: RELU
+  bottom: "ip1"
+  top: "ip1"
+}
+
+layers {
+  name: "accuracy"
+  type: ACCURACY
+  bottom: "ip1"
+  bottom: "label_1"
+  top: "accuracy"
+}
+
+layers {
+  name: "loss"
+  type: SOFTMAX_LOSS
+  bottom: "ip1"
+  bottom: "label_1"
+  top: "loss"
+}
